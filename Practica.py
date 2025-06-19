@@ -7,7 +7,8 @@ MENU_PRINCIPAL = """//BIENVENIDO A CALCULADORA SANTI - NO FUNCIONA CON HINCHAS D
 3. Multiplicacion
 4. Division
 5. Salir del Menu
-Ingrese un numero de (1 a 5): """
+Ingrese un numero de (1 a 5): 
+Cambio Tonto"""
 
 print(MENU_PRINCIPAL)
 
