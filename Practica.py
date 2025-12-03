@@ -1,36 +1,40 @@
-PRIMER_VALOR = "Ingrese el primer valor a "
-SEGUNDO_VALOR = "Ingrese el segundo valor a "
-MENU_PRINCIPAL = """//BIENVENIDO A CALCULADORA SANTI - NO FUNCIONA CON HINCHAS DE MILLOS//
-¿Que operacion desea hacer?
-1. Suma
-2. Resta
-3. Multiplicacion
-4. Division
-5. Salir del Menu
-Ingrese un numero de (1 a 5): """
+import constantes
+import os
+import Funciones
 
-print(MENU_PRINCIPAL)
+opciones_validas = ["1","2","3","4","5"]
+opcion = Funciones.pedir_opcion_valida(opciones_validas, constantes.MENU_PRINCIPAL)
 
-opcion = int(input())
+match opcion:
+    case "1":
+        numero1 = Funciones.ingresar_numero(1,"+")
+        numero2 = Funciones.ingresar_numero(2,"+")
+        resultado = Funciones.operar(numero1, 1, numero2)
+        print(f"El resultado de la suma de '{numero1}' Y '{numero2}' es =", resultado)
 
-if opcion == 1:
-    numero1= int(input(PRIMER_VALOR+"Sumar:"))
-    numero2= int(input(SEGUNDO_VALOR+"Sumar:"))
-    print ("Este es el resultado de la Suma:", numero1+numero2)
+     
 
-elif opcion == 2:
-    numero1= int(input(PRIMER_VALOR+"Restar:"))
-    numero2= int(input(SEGUNDO_VALOR+"Restar:"))
-    print ("Este es el resultado de la Resta:", numero1-numero2)
+    case "2":
+        numero1 = Funciones.ingresar_numero(1,"-")
+        numero2 = Funciones.ingresar_numero(2,"-")
+        resultado = Funciones.operar(numero1, 2, numero2)
+        print(f"El resultado de la resta de '{numero1}' Y '{numero2}' es =", resultado)
+
+
     
-elif opcion == 3:
-    numero1= int(input(PRIMER_VALOR+"Multiplicar:"))
-    numero2= int(input(SEGUNDO_VALOR+"Multiplicar:"))
-    print ("Este es el resultado de la Multiplicacion:", numero1*numero2)
+    case "3":
+        numero1 = Funciones.ingresar_numero(1,"*")
+        numero2 = Funciones.ingresar_numero(2,"*")
+        resultado = Funciones.operar(numero1, 3, numero2)
+        print(f"El resultado de la multiplicacion de '{numero1}' Y '{numero2}' es =", resultado)
 
-elif opcion == 4:
-    numero1= int(input(PRIMER_VALOR+"Division:"))
-    numero2= int(input(SEGUNDO_VALOR+"Division:"))
-    print ("Este es el resultado de la Division:", numero1//numero2)    
-else:
-    print("\nUsted ha salido") 
+    case "4": 
+     
+        numero1 = Funciones.ingresar_numero(1,"/")
+        numero2 = Funciones.ingresar_numero(2,"/")
+        resultado = Funciones.operar(numero1, 4, numero2)
+        print(f"El resultado de la division de '{numero1}' Y '{numero2}' es =", resultado)   
+     
+    case "5":
+     print("\nUsted ha salido...") 
+
